@@ -1,0 +1,25 @@
+{:mvn/repos {"ossrh-snapshots" {:url "https://s01.oss.sonatype.org/content/repositories/snapshots"}}
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        com.xtdb.labs/xtdb-api {:mvn/version "2.0.0-SNAPSHOT"}
+        com.xtdb.labs/xtdb-core {:mvn/version "2.0.0-SNAPSHOT"}
+        com.xtdb.labs/xtdb-http-server {:mvn/version "2.0.0-SNAPSHOT"}
+        com.xtdb.labs/xtdb-pgwire-server {:mvn/version "2.0.0-SNAPSHOT"}
+        io.github.nextjournal/clerk {:mvn/version "0.13.842"}
+        cheshire/cheshire {:mvn/version "5.11.0"}
+        ;;tick/tick {:mvn/version "0.6.2"}
+        com.rpl/specter {:mvn/version "1.1.4"}
+        jackrusher/mundaneum {:git/url "https://github.com/jackrusher/mundaneum/"
+                              :git/sha "0ba6321701718f16daacbb6e36ba26548d79d86b"}
+        hato/hato              {:mvn/version "0.8.2"}
+        }
+ :paths ["notebooks"]
+ :aliases
+ {:nextjournal/clerk
+  {:extra-paths ["dataset"]
+   :exec-fn nextjournal.clerk/build!
+   :exec-args {:paths ["notebooks/exploring_wikidata.clj"]}
+   ;; TODO: add all notebooks you want to have built ☝️
+   ;; if you just want to build one notebook, set `:index`
+
+   ;; optional list of aliases to include in t
+   }}}
