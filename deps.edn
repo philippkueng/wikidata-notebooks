@@ -1,9 +1,5 @@
 {:mvn/repos {"ossrh-snapshots" {:url "https://s01.oss.sonatype.org/content/repositories/snapshots"}}
  :deps {org.clojure/clojure {:mvn/version "1.11.1"}
-        com.xtdb.labs/xtdb-api {:mvn/version "2.0.0-SNAPSHOT"}
-        com.xtdb.labs/xtdb-core {:mvn/version "2.0.0-SNAPSHOT"}
-        com.xtdb.labs/xtdb-http-server {:mvn/version "2.0.0-SNAPSHOT"}
-        com.xtdb.labs/xtdb-pgwire-server {:mvn/version "2.0.0-SNAPSHOT"}
         io.github.nextjournal/clerk {:mvn/version "0.13.842"}
         cheshire/cheshire {:mvn/version "5.11.0"}
         ;;tick/tick {:mvn/version "0.6.2"}
@@ -22,4 +18,10 @@
    ;; if you just want to build one notebook, set `:index`
 
    ;; optional list of aliases to include in t
-   }}}
+  }
+  :xtdb2 {:extra-deps {com.xtdb.labs/xtdb-api           {:mvn/version "2.0.0-SNAPSHOT"}
+                       com.xtdb.labs/xtdb-core          {:mvn/version "2.0.0-SNAPSHOT"}
+                       com.xtdb.labs/xtdb-http-server   {:mvn/version "2.0.0-SNAPSHOT"}
+                       com.xtdb.labs/xtdb-pgwire-server {:mvn/version "2.0.0-SNAPSHOT"}}}
+  :xtdb1 {:extra-deps {com.xtdb/xtdb-core {:mvn/version "1.23.3"}
+                       com.xtdb/xtdb-rocksdb {:mvn/version "1.23.3"}}}}}
